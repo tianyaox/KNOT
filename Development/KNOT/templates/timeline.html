@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/timeline.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/generalCard.css" %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="{% static "js/jquery.pin.js"%}"></script>
+<script src="{% static "js/timeline.js" %}"></script>
+{% endblock %}
+
+
+
+{% block active1 %}active{% endblock %}
+
+
+{% block body %}
+<div class="container timelineContainer">
+    <div class="wTimeLineSideBarContainer">
+        <ul class="xTimelineSideTag">
+            <li><a href="/timeline/1">NewContacts</a></li>
+            <li><a href="/timeline/4">Requests</a></li>
+            <li><a href="/timeline/2">Updates</a></li>
+            <li><a href="/timeline/3">Recommend</a></li>
+        </ul>
+    </div>
+    
+
+
+
+    {% if request.path == "/timeline/1" %}
+
+    <div class="wTimeLineContainer">
+    
+        <div class="wTimeLineLeftContainer">
+            
+        {% for leftCard in leftCards %}
+            
+            <div class="wLeftCardContainer">
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        <a href="/otherCard/{{leftCard.user.id}}"><img src="{% if leftCard.imageURL %}{{leftCard.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+                    </div>
+                    <div class="xCardContent">
+                        <div class="xName"><a href="/otherCard/{{leftCard.user.id}}">{{leftCard.firstName}} {{leftCard.lastName}}</a></div>
+
+                        <div class="xTitle">{{leftCard.title}}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+
+        </div>
+
+
+        <div class="wTimeLineMiddleLine">
+        </div>
+
+
+        <div class="wTimeLineRightContainer">
+            {% for rightCard in rightCards %}
+            <div class="wRightCardContainer">
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        <a href="/otherCard/{{rightCard.user.id}}"><img src="{% if rightCard.imageURL %}{{rightCard.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+                    </div>
+                    <div class="xCardContent">
+                        <div class="xName"><a href="/otherCard/{{rightCard.user.id}}">{{rightCard.firstName}} {{rightCard.lastName}}</a></div>
+
+                        <div class="xTitle">{{rightCard.title}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+        <div class="wClearFloat"></div>
+    </div>
+
+
+
+
+
+
+        {% elif request.path == "/timeline/2" or request.path == "/timeline/4" %}
+    <div class="wTimeLineContainer">
+    
+        <div class="wTimeLineLeftContainer">
+            
+        {% for leftN in leftNs %}
+
+            <div class="wLeftCardContainer">
+                    <!-- <h1>Mengyan</h1> -->
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        {% with leftN.fromUser.card_set.all|first as card %}
+
+                        <a href="/otherCard/{{leftN.fromUser.id}}"><img src="{% if card.imageURL %}{{card.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+
+                        {% endwith %}
+                    </div>
+                    <div class="xCardContent">
+                        <a href="/otherCard/{{leftN.fromUser.id}}">{{leftN.fromUser.username}}</a> {{leftN.content}}
+                    </div>
+                </div>
+
+                <div class="xDate">{{leftN.time}}</div>
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+
+
+        <div class="wTimeLineMiddleLine">
+        </div>
+
+
+        <div class="wTimeLineRightContainer">
+           {% for rightN in rightNs %}
+            <div class="wRightCardContainer">
+                    <!-- <h1>Mengyan</h1> -->
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        {% with rightN.fromUser.card_set.all|first as card %}
+
+                        <a href="/otherCard/{{rightN.fromUser.id}}"><img src="{% if card.imageURL %}{{card.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+
+                        {% endwith %}
+                    </div>
+                    <div class="xCardContent">
+                        <a href="/otherCard/{{rightN.fromUser.id}}">{{rightN.fromUser.username}}</a> {{rightN.content}}
+                    </div>
+                </div>
+
+                <div class="xDate">{{rightN.time}}</div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+
+        <div class="wClearFloat"></div>
+    </div>
+        {% elif request.path == "/timeline/3" %}
+    <div class="wTimeLineContainer">
+    
+        <div class="wTimeLineLeftContainer">
+            
+        {% for leftS in leftStrangers %}
+
+            <div class="wLeftCardContainer">
+                    <!-- <h1>Mengyan</h1> -->
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        <a href="/otherCard/{{leftS.user.id}}"><img src="{% if leftS.imageURL %}{{leftS.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+
+
+                    </div>
+                    <div class="xCardContent">
+                        <h7>Recommendation</h7>
+                        <div class="wClearFloat"></div>
+
+
+                        <a style="font-size:1.5em;" href="/otherCard/{{leftS.user.id}}">{{leftS.firstName}} {{leftS.lastName}}</a>
+                        <p>{{leftS.title}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+
+
+        <div class="wTimeLineMiddleLine">
+        </div>
+
+
+        <div class="wTimeLineRightContainer">
+        {% for rightS in rightStrangers %}
+
+            <div class="wRightCardContainer">
+                    <!-- <h1>Mengyan</h1> -->
+                <div class="xCardContainer">
+                    <div class="xImage">
+                        <a href="/otherCard/{{rightS.user.id}}"><img src="{% if rightS.imageURL %}{{rightS.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+
+
+                    </div>
+                    <div class="xCardContent">
+                        <h7>Recommendation</h7>
+                        <div class="wClearFloat"></div>
+
+                        <a style="font-size:1.5em;" href="/otherCard/{{rightS.user.id}}">{{rightS.firstName}} {{rightS.lastName}}</a>
+                        <p>{{rightS.title}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+
+
+        <div class="wClearFloat"></div>
+    </div>
+
+
+        {% endif %}
+    <div class="wTimeLineLoadContainer">
+        <i class="fa fa-refresh fa-spin fa-4x"></i>
+    </div>
+</div>
+{% endblock %}
+

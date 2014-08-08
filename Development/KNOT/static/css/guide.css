@@ -1,0 +1,248 @@
+.bContent{
+	margin: 10% 0;
+}
+
+.bCard{
+	background-color: #EBEAE3;
+	height: 350px;
+	width: 80%;
+	margin: auto;
+	/*box-shadow: 0 0 10px gainsboro;*/
+	overflow: hidden;
+	font-weight: lighter;
+}
+
+.bShowCard{
+	.bCard;
+	width:80%;
+	margin: auto;
+	border-radius: 0;
+	height:350px;
+	/*color: white;*/
+	color:black;	
+}
+
+.bShowProfileOne {
+	width:96%;
+	height: 91%;
+	margin:2% 2%;
+	background-color: white;
+	text-align: center;
+	padding-top: 10%;
+}
+
+.bShowProfileTwo {
+	width:96%;
+	height: 91%;
+	margin:2% 2%;
+	background-color: white;
+	text-align: center;
+	padding-top: 1%;
+}
+
+.bStepTwoHead {
+	padding-bottom: 3%;
+	border-bottom: 1px solid gray;
+	color: gray;
+}
+
+.bStepTwoForm {
+	margin-top: 14px;
+}
+
+.bStepTwoInput {
+	display: block;
+	margin: 5px auto;
+	width: 50%;
+	margin-top: 10px;
+}
+
+.bStepTwoButton {
+	margin-top: -23px;
+}
+
+.bFacebookInfo {
+	display: inline-flex;
+	margin-top: 10px;
+	color: #3b5998;
+	margin-right: 55px;
+}
+
+.bFacebookInfo:hover {
+	color: #3b5998;
+}
+
+.bShowProfileThree {
+	width:96%;
+	height: 91%;
+	margin:2% 2%;
+	background-color: white;
+	text-align: center;
+	padding-top: 2%;
+}
+
+.bStepThreeInput {
+	display: block;
+	margin: 5px auto;
+	width: 50%;
+	margin-top: 10px;
+}
+
+.bStepThreeButton {
+	margin-top: -23px;
+}
+.bStepThreeForm {
+	margin-top: 14px;
+}
+
+.bStepThreeSkip {
+	display: block;
+	margin-top: 4px;
+	font-size: 20px;
+}
+
+.bStepThreeSkip:hover {
+	text-decoration: underline;
+}
+
+.bShowProfileFour {
+	width:96%;
+	height: 92%;
+	margin:2% 2%;
+	background-color: white;
+	text-align: center;
+	padding-top: 2%;
+}
+
+.bStepFourImg {
+	width: 140px;
+	height: 140px;
+	display: block;
+	margin: auto auto;
+	border-radius: 10px;
+}
+.bStepFourButton {
+	display: inline-block;
+	margin-top: 17px !important;
+	margin-right: 10px;
+	background-color: #48c9b1 !important;
+	background-image: initial !important;
+	border: #48c9b1 !important;
+}
+
+.bStepFourSkip {
+	color: #48c9b1 !important;
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 20px;
+	padding-top: 15px;
+}
+.fileinput {
+	display: block !important;
+	margin-bottom: -10px !important;
+}
+
+.bShowProfileFive {
+	width:96%;
+	height: 91%;
+	margin:2% 2%;
+	background-color: white;
+	text-align: center;
+	padding-top: 2%;
+}
+
+.fileinput .thumbnail>img {
+	max-height: 100%;
+	width: 140px;
+	height: 140px;
+}
+.bStepFourForm {
+	margin-top: 10px;
+}
+.bStepFourButton {
+	display: inline-block;
+	margin-top: -3px;
+	margin-right: 10px;
+}
+
+.bCardContainer {
+	/*background: #1abc9c;*/
+	display: block;
+	margin: 10px 10px;
+	float: left;
+	width: 47%;
+	padding: 5px;
+	overflow: hidden;
+	border-radius: 5px;
+	border:2px solid #bcc3ca;
+}
+.bCardContainer img{
+	border-radius: 5px;
+}
+.bCardImage {
+	width: 26%;
+	height: 68px;
+	float: left;
+	margin-top: 1px;
+}
+.bCardContainer a{
+	color: black;
+
+}
+.bCardContainer a.bAddButton{
+	font-size: 1.2em;
+}
+
+.bCardContainer a:hover {
+	color: #1abc9c;
+
+}
+.bImageContainer a.bAddButton {
+
+	border-radius: 2px;
+	display: none;
+	position: absolute;
+	-webkit-transform: translate(-50%);
+	transform: translate(-50%);
+	background: #1abc9c;
+	color:black;
+	padding: 0px 5px;
+	left: 12%;
+	top: 45px;
+}
+
+.bCardContainer:hover a.bAddButton{
+	display: block;
+	/*font-size: 15px;*/
+}
+
+.bName {
+	font-size:2em;
+	margin-bottom: 0.2em;
+}
+
+.bStepFiveForm{
+	margin-top: 15px;
+	display: block;
+	height: 195px;
+	overflow: auto;
+}
+.bStepFiveButton{
+	display: block;
+	clear: both;
+	margin: auto auto;
+}
+.bLinkedInInfo {
+	display: inline-flex;
+	margin-top: 5px;
+	color: #4875B4;
+	margin-right: 55px;
+}
+
+.bLinkedInInfo:hover {
+	color: #4875B4;
+}
+
+.bSearchGmail {
+	margin-bottom: 5%;
+}

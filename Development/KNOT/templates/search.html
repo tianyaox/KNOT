@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/reset.css" %}" rel="stylesheet">
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" >
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+<link  href="{% static "css/myCard.css" %}" rel="stylesheet/less">
+<script src="{% static "js/less-1.4.1.min.js" %}" type="text/javascript"></script>
+<link href="{% static "css/generalCard.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/search.css" %}" rel="stylesheet">
+
+
+<!-- <link href="{% static "css/login.css" %}" rel="stylesheet" media="screen"> -->
+{% endblock %}
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script src="{% static "js/jquery.tagsinput.js" %}"></script>
+<script src="{% static "js/search.js" %}"></script>
+{% endblock %}
+
+
+{% block active4 %}active{% endblock %}
+
+
+
+{% block body %}
+   <div class="container">
+    <div class="addConfirm modal">
+      <div class="modal-dialog">
+        <div class="modal-content" style="height:222px">
+          <div class="modal-header">
+            <button type="button" class="closeAddConfirm close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Send Friend Request Confirmation</h4>
+          </div>
+
+          <div class="modal-body">            
+            <p>Are you sure to send friend request?</p>
+          </div>
+
+          <div class="modal-footer">
+            <a href="#" class="closeAddConfirm btn">Cancel</a>
+            <a href="#" class="confirmAdd btn">OK</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="addConfirmAfter modal">
+      <div class="modal-dialog">
+        <div class="modal-content" style="height:222px">
+          <div class="modal-header">
+            <button type="button" class="closeAddConfirmAfter close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Send Friend Request Confirmation</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>Request has been sent. Please wait for reply.</p>
+          </div>
+
+          <div class="modal-footer">
+            <a href="#" class="closeAddConfirmAfter btn">OK</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+       <div class="row">
+           <div class="col-md-4">
+               <form role="form" class="bForm">
+                  
+
+                   <h5 class="help-block">Search for Friend</h5>
+                  <a href="/connectGoogleSearchEmailList/?mode=1" title="click here to search for gmail friends" class="bGmailIcon"><i class="fa fa-google-plus-square fa-2x"></i></a>
+
+                   <section>Find friend from different parts of your life</section>
+
+
+
+                   <div class="form-group">
+                       <label for="bSearchName">Name</label>
+                       <input type="text" class="form-control" id="bSearchName" placeholder="Enter Name">
+                   </div>
+
+
+
+                   <div class="form-group">
+                       <label for="bGenderSelection" style="display: block">Gender</label>
+
+                      <select class="gender">
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                        <option value="2">All</option>
+                      </select>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="bAgeSelection" style="display: block">Age</label>
+
+                      <select class="age">
+                        <option value="0">18~30</option>
+                        <option value="1">31~40</option>
+                        <option value="2">41~50</option>
+                        <option value="3">50+</option>
+                        <option value="4">All</option>
+                      </select>
+                   </div>
+
+
+                   <div class="form-group">
+                       <label for="bCurrentCity">City</label>
+                       <input type="text" class="form-control" id="bCurrentCity" placeholder="Enter city name">
+                   </div>
+<!--                    <div class="form-group">
+                       <label for="bAnotherFriend">Mutual friend</label>
+
+                       <input name="tagsinput" class="mutualFriend tagsinput" value="">
+                   </div>
+ -->                   <a class="search btn btn-primary">Submit</a>
+               </form>
+           </div><!--End Left Block-->
+
+           <div class="col-md-8 xSearchPage">
+               {% if cards %}
+               <div class="xContactPage">
+
+                    {% for card in cards %}
+                    <div class="xColumnWrapper">
+                        <div class="xCardContainer">
+                            <div class="xImage">
+                                <a href="/otherCard/{{card.user.id}}"><img src="{% if card.imageURL %}{{card.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture"></a>
+                                <a class="addButton removeButton btn btn-embossed" id="{{card.user.id}}" href="#">Add</a>
+                            </div>
+                            <div class="xCardContent">
+                                <a href="/otherCard/{{card.user.id}}"><div class="xName">{{card.firstName}} {{card.lastName}}</div></a>
+                                <div class="xTitle">{{card.title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+              
+
+
+<!--                <div class="bMainBlock"></div>
+               <div class="bMainBlock"></div> -->
+           </div>
+
+           <!--<div class="col-md-offset-1"></div>-->
+       </div><!--End row-->
+   </div><!--End container-->
+
+{% endblock %}

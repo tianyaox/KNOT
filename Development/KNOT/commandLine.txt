@@ -1,0 +1,34 @@
+from generateDummyData import *
+generateDummyData()
+
+
+from Friend.mytests import *
+testRecommendFriend()
+testUpdateFriendPermission()
+testAddFriendRequest()
+testDeleteFriend()
+testAddFriend()
+testGetFriendList()
+testSearchFriend()
+
+
+from Card.mytests import *
+testContactsHtml()
+testSearchCard()
+testCheckUpdateCard()
+testSearchHtml()
+testOtherHtml()
+testMyCardHtml()
+
+
+
+from Notification.mytests import *
+testDeleteNotification()
+testGetNotification()
+
+
+from Permission.mytests import *
+testUpdatePermissionTemplate()
+testPermissionTemplateHtml()
+testDeletePermissionTemplate()
+testAddPermissionTemplate()

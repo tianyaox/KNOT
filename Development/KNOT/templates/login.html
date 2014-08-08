@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block extraCss %}
+<link href="{% static "css/login.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+{% endblock %}
+{% block header%}
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron firstJumb">
+
+            <header class="navbar">
+              <div class="navbar-inner">
+                <div class="container">
+                  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-03"></button>
+                  <a href="#" class="navbar-brand">Knot</a>
+                  <div class="nav-collapse collapse in" id="nav-collapse-03">
+
+
+                    <ul class="nav pull-right">
+                      <li class="divider"></li>
+
+                        <li class="">
+                        <a href="">
+                            Login
+                        </a>
+                      </li>
+                      </li>
+                        <li class="">
+                        <a href="" class="bRegisterSlide">
+                            Register
+                        </a>
+                      </li>
+
+
+                    </ul> <!-- /nav -->
+
+                  </div><!--/.nav-collapse -->
+                </div>
+              </div>
+            </header> <!-- /navbar-inverse -->
+
+            <div class="jumb1">
+          <div class="leftWrapper">
+            <h1>Connect the world.</h1>
+            <p>KNOT allows you to keep in touch with your mates and expand your </p>
+            <p>worldwide network easily.</p>
+
+            <p><a class="btn btn-primary btn-lg" role="button">Create My Card Now</a></p>
+          </div>
+          <div class="registerWrapper">
+          <div class="bSuccess"></div>      
+        <div id="bRegister" class="container bRegisterContainer" style="display:none">
+
+                    <div class="bRegister">
+                            <div>
+                                <label class="sr-only">Username</label>
+                                <input class="bRegisterUserName busername form-control" placeholder="Username" name="username">
+                            </div>
+                            <div>
+                                <label class="sr-only">Email address</label>
+                                <input type="email" class="bRegisterEmail bemail form-control" placeholder="Enter email" name="email">
+                            </div>
+                            <div>
+                                <label class="sr-only">Password</label>
+                                <input type="password" class="bRegisterPassword bpassword1 form-control" placeholder="Password" name="password1">
+                            </div>
+                            <div>
+                                <label class="sr-only">Confirmed password</label>
+                                <input type="password" class="bRegisterPassword2 bpassword2 form-control" placeholder="Confirm Password" name="password2">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-block bRegisterButton">Sign Up</button>
+
+                        <div class="bLoginSlide">
+                            <a href="#" id="bLoginSlide">Login</a>
+                        </div>
+                    </div>
+        </div>
+
+        <div id="bLogin" class="container bLoginContainer">
+
+            {% if success %}
+            <p class="bResetSc">{{success}}</p>
+            {% endif %}
+
+                <div class="bLogin">
+                    <form method="post" action="{% url login %}" autocomplete="off">
+                        <input name="username" maxlength="30" placeholder="username" type="text" class="bRegisterUserName form-control">
+                        <input name="password" maxlength="30" placeholder="password" type="password" class="bRegisterPassword2 form-control">
+
+                        <input type="hidden" name="next" value="{{next}}" />
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-block bLoginButton">Login</button>
+                        <div class="bOther">
+                            <a href="{% url forget %}">Forgot Password?</a>
+                            <a href="#" id="bRegisterSlide">Register</a>
+                        </div>
+                    </form>
+
+                </div> 
+                {% if error %}
+                <li class="bLoginError">{{error}}</li>
+                {% endif %}             
+        </div> 
+
+
+
+    </div>
+</div>
+</div>
+
+<div style="clear:both"></div>
+
+<div class="jumbotron secondJumb">
+<div class="row demo-tiles">
+        <div class="col-md-3 xBlocks">
+          <div class="tile">
+            <img src="{% static 'img/chat.svg' %}" alt="Compas" class="tile-image big-illustration">
+            <h3 class="tile-title">Keep in touch</h3>
+            <p>Keep in touch with your old friends, classmates.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 xBlocks">
+          <div class="tile">
+            <img src="{% static 'img/book.svg' %}" alt="Infinity-Loop" class="tile-image">
+            <h3 class="tile-title">Network</h3>
+            <p>Expand your social network.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 xBlocks">
+          <div class="tile">
+            <img src="{% static 'img/mail.svg' %}" alt="Pensils" class="tile-image">
+            <h3 class="tile-title">Open source</h3>
+            <p>An open source project.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 xBlocks">
+          <div class="tile tile-hot">
+            <img src="{% static 'img/pencils.svg' %}" alt="Chat" class="tile-image">
+            <h3 class="tile-title">Technology</h3>
+            <p>Synchronize contact information any time anywhere on any devices.</p>
+          </div>
+
+        </div>
+      </div> <!-- /tiles -->
+</div>
+
+     
+
+{% endblock %}
+
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="{% static "js/jquery-1.8.3.min.js" %}"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="{% static "js/login.js" %}"></script>
+{% endblock %}

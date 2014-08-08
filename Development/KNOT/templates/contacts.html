@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+<link href="{% static "css/generalCard.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/search.css" %}" rel="stylesheet">
+<link href="{% static "css/timeline.css" %}" rel="stylesheet">
+<link href="{% static "css/contact.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm0rWyO5X5X2949eQNjsFbQdSNkleE3_o&sensor=true"></script>
+<script src="{% static "js/contacts.js" %}"></script>
+{% endblock %}
+
+{% block active2 %}active{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container contactsContainer">
+
+    <div class="removeConfirm modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="closeRemoveConfirm close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Remove Confirmation</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>Are you sure to remove this contact?</p>
+          </div>
+
+          <div class="modal-footer">
+            <a href="#" class="closeRemoveConfirm btn">Cancel</a>
+            <a href="#" class="confirmRemove btn">OK</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div></div>
+            <div class="bForm">
+                <div class="demo-row">
+
+                    <h5 class="demo-title bSideTitle">Contacts</h5>
+                    <a title="Click to see the all locations of your friends" href="#"><i class="fa fa-globe fa-2x bLocation" id="icon-earth"></i></a>
+                    <a class="bDownloadCSV" href="{% url exportCSV %}"><i class="fa fa-download"></i>Download contact list as csv</a>
+
+                    <div class="demo-col">
+                        <ul class="nav nav-list nav-list-vivid">
+                            <li class="nav-header">GROUP</li>
+                            <li>
+                                <a class="leftNav" href="{% url contacts 'all' %}">
+                                    All
+                                    <span class="badge pull-right">{{ allFriendNum }}</span>
+                                </a>
+                            </li>
+
+                            {% for name,num in nameAndNumZip %}
+                            <li>
+                                <a class="leftNav" href="{% url contacts name %}">
+                                    {{name}}
+                                    <span class="badge pull-right">{{num}}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+
+
+                        <form class="input-group sideBarSearch" method="post" action="{% url contacts 'all' %}" id="searchContactForm">
+                            <input type="text" class="form-control input-group xSearchContactsName" placeholder="Search by name" style="z-index:100" name="name"/>
+                            <input type="hidden" name="range" value="friends"/>
+                            <span class="input-group-btn"><a class="btn btn-default xSearchContacts"><i class="fa fa-search"></i></a></span>
+                            {% csrf_token %}
+                        </form>
+
+                    </div> <!-- /nav-list -->
+                </div>
+            </div>
+
+        </div><!--End Left Block-->
+
+        <div class="col-md-offset-1 col-md-7 xRightSide">
+
+
+                    <div class="xContactPage">
+                        {% for card in cards %}
+                        
+                        <div class="xColumnWrapper">
+                            <div class="xCardContainer">
+                                <div class="xImage">
+                                    <a href="{% url otherCard card.user.id %}">
+                                    
+                                        <img src="{% if card.imageURL %}{{card.imageURL}}{% else %}https://s3.amazonaws.com/knot/default.jpg{% endif %}" alt="Picture">
+                                    
+                                    </a>
+
+                                    <a href="#" id="{{card.user.id}}" class="removeButton btn btn-embossed">Remove</a>
+
+                                </div>
+                                <div class="xCardContent">
+                                    <a href="{% url otherCard card.user.id %}"><div class="xName">{{card.firstName}} {{card.lastName}}</div></a>
+                                    <div class="xTitle">{{card.title}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if forloop.counter|divisibleby:"2" %}
+                        <div style="clear:both;"></div>
+                        {% endif %}
+
+                        {% endfor %}
+
+                         
+                    </div>
+
+
+        </div>
+
+    </div><!--End row-->
+    <div class="wTimeLineLoadContainer">
+        <i class="fa fa-refresh fa-spin fa-4x"></i>
+    </div>
+</div>
+<div id="bGoogleContent">
+    <div>
+        <div class="bMapHead">
+            <h4 class="bMapTitle">Friends Locations</h4>
+            <button class="close bMapClose">X</button>
+        </div>
+        <div id="bGoogleMap"></div>
+    </div>
+</div>     
+
+
+    
+{% endblock %}

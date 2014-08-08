@@ -1,0 +1,467 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+<link href="{% static "css/generalCard.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/search.css" %}" rel="stylesheet">
+<link href="{% static "css/timeline.css" %}" rel="stylesheet">
+<link href="{% static "css/permission.css" %}" rel="stylesheet/less">
+<script src="{% static "js/less-1.4.1.min.js" %}" type="text/javascript"></script>
+
+
+{% endblock %}
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="{% static "js/permission.js" %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="deletePermissionModal modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close closeDeletePermission fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">Delete Confirmation</h3>
+      </div>
+
+      <div class="modal-body">
+        <p>Sure to remove this?</p>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" class="btn confirmDeletePermission">OK</a>
+        <a href="#" class="btn closeDeletePermission">Cancel</a>
+      </div>
+    </div>
+  </div>  
+</div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div></div>
+            <div class="bForm">
+                <div class="demo-row">
+
+                    <div class="demo-col">
+
+                        <ul class="nav nav-list nav-list-vivid">
+                            <h4 class="demo-title">Permission Levels</h4>
+                            {% for name in templateNames %}
+                            {% if name == selectedTemplateName %}
+                            <li class="active">
+                            {% else %}
+                            <li>
+                            {% endif %}
+                                <a class="leftNav" href="/getPermissionTemplate/{{name}}">
+                                    {{name}}
+                                    <!-- <span class="badge pull-right">{{ numOfMembers.2 }}</span> -->
+                                </a>
+                                {% if name == selectedTemplateName %}
+                                    <ul>                                
+                                    {% for card in friendsWithSelectedPermission %}
+                                        <div class="levelPerson"><a href="/otherCard/{{card.user.id}}">{{card.firstName}} {{card.lastName}}</a></div>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                            {% if selectedTemplateID %}
+                            <div class="hiddenId" style="display:none;">{{selectedTemplateID}}</div>
+                            {% endif %}
+
+                          
+                            <a href="/getPermissionTemplate/addNewTemplate" class="addNewTemplateButton btn btn-embossed btn-wide">Add new level</a>
+                        </ul>
+                    </div> <!-- /nav-list -->
+                </div>
+            </div>
+        </div><!--End Left Block-->
+
+        <div class="col-md-offset-1 col-md-7">
+                    <h4 class="demo-title">Permission Setting</h4>
+                    {% if 'friend' in request.path or 'default' in request.path %}
+                    <p>"Friend" is a default permission level which cannot be removed.</p>
+                    <input type="hidden" value="{{selectedTemplateName}}" placeholder="Level Name" class="permissionLevelName form-control" />
+
+                    <input type="hidden" value="{{selectedTemplateName}}" placeholder="Level Name" class="permissionLevelName form-control" />
+                    <div class="errorMessage" style="color:red"></div>
+
+                    {% else %}
+                    <h6 class="demo-title">Level Name</h6>
+
+                    <input type="text" value="{{selectedTemplateName}}" placeholder="Level Name" class="permissionLevelName form-control" />
+                    <div class="errorMessage" style="color:red"></div>
+
+                    {% endif %}
+                   
+<!-- Basic -->
+                    <div class="xContactPage">
+                    <h6 class="demo-title">Basic Information</h6>
+
+                    {% if 'firstName' in selectedTemplateSections %}
+
+                        <label class="checkbox checked" for="checkbox1">
+                            <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">Name
+                        </label>
+                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox1">
+                            <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">Name
+                        </label>
+
+                    {% endif %}
+
+                    {% if 'gender' in selectedTemplateSections %}
+
+                        <label class="checkbox checked" for="checkbox2">
+                            <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">Gender
+                        </label>
+
+                    {% else %}
+                        <label class="checkbox" for="checkbox2">
+                            <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">Gender
+                        </label>
+                    {% endif %}
+
+                    {% if 'title' in selectedTemplateSections %}
+
+
+                        <label class="checkbox checked" for="checkbox3">
+                            <input type="checkbox" value="" id="checkbox3" data-toggle="checkbox">Title
+                        </label>
+
+                    {% else %}
+                        <label class="checkbox" for="checkbox3">
+                            <input type="checkbox" value="" id="checkbox3" data-toggle="checkbox">Title
+                        </label>
+
+                    {% endif %}
+
+                    {% if 'birthday' in selectedTemplateSections %}
+
+                        <label class="checkbox checked" for="checkbox4">
+                            <input type="checkbox" value="" id="checkbox4" data-toggle="checkbox">Birthday
+                        </label>
+
+                    {% else %}
+
+
+                        <label class="checkbox" for="checkbox4">
+                            <input type="checkbox" value="" id="checkbox4" data-toggle="checkbox">Birthday
+                        </label>
+                    {% endif %}
+
+
+                    {% if 'citizenship' in selectedTemplateSections %}
+
+
+                        <label class="checkbox checked" for="checkbox5">
+                            <input type="checkbox" value="" id="checkbox5" data-toggle="checkbox">Citizenship
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox5">
+                            <input type="checkbox" value="" id="checkbox5" data-toggle="checkbox">Citizenship
+                        </label>
+                    {% endif %}
+
+
+
+                    </div>
+
+<!--Address  -->
+                    <div class="xContactPage">
+
+                    <h6 class="demo-title">Address Information</h6>
+                    {% if 'address1' in selectedTemplateSections %}
+                    
+                        <label class="checkbox checked" for="checkbox6">
+                            <input type="checkbox" value="" id="checkbox6" data-toggle="checkbox">Address1
+                        </label>
+                    {% else %}
+                    
+
+
+                        <label class="checkbox" for="checkbox6">
+                            <input type="checkbox" value="" id="checkbox6" data-toggle="checkbox">Address1
+                        </label>
+                    {% endif %}
+
+
+                    {% if 'address2' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox7">
+                            <input type="checkbox" value="" id="checkbox7" data-toggle="checkbox">Address2
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox7">
+                            <input type="checkbox" value="" id="checkbox7" data-toggle="checkbox">Address2
+                        </label>
+                    {% endif %}
+
+
+                    {% if 'address3' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox8">
+                            <input type="checkbox" value="" id="checkbox8" data-toggle="checkbox">Address3
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox8">
+                            <input type="checkbox" value="" id="checkbox8" data-toggle="checkbox">Address3
+                        </label>
+                    {% endif %}
+                        
+                    {% if 'address4' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox9">
+                            <input type="checkbox" value="" id="checkbox9" data-toggle="checkbox">Address4
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox9">
+                            <input type="checkbox" value="" id="checkbox9" data-toggle="checkbox">Address4
+                        </label>
+                    {% endif %}
+
+                    {% if 'address5' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox10">
+                            <input type="checkbox" value="" id="checkbox10" data-toggle="checkbox">Address5
+                        </label>
+                
+
+                    {% else %}
+                        <label class="checkbox" for="checkbox10">
+                            <input type="checkbox" value="" id="checkbox10" data-toggle="checkbox">Address5
+                        </label>
+                    {% endif %}
+
+                    </div>
+<!-- Contact -->
+                    <div class="xContactPage">
+
+                    <h6 class="demo-title">Contact Information</h6>
+                    {% if 'email1' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox11">
+                            <input type="checkbox" value="" id="checkbox11" data-toggle="checkbox">Email1
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox11">
+                            <input type="checkbox" value="" id="checkbox11" data-toggle="checkbox">Email1
+                        </label>
+                    {% endif %}
+
+                    {% if 'email2' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox12">
+                            <input type="checkbox" value="" id="checkbox12" data-toggle="checkbox">Email2
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox12">
+                            <input type="checkbox" value="" id="checkbox12" data-toggle="checkbox">Email2
+                        </label>
+                    {% endif %}
+
+                    {% if 'email3' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox13">
+                            <input type="checkbox" value="" id="checkbox13" data-toggle="checkbox">Email3
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox13">
+                            <input type="checkbox" value="" id="checkbox13" data-toggle="checkbox">Email3
+                        </label>
+                    {% endif %}
+
+                    {% if 'email4' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox14">
+                            <input type="checkbox" value="" id="checkbox14" data-toggle="checkbox">Email4
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox14">
+                            <input type="checkbox" value="" id="checkbox14" data-toggle="checkbox">Email4
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'email5' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox15">
+                            <input type="checkbox" value="" id="checkbox15" data-toggle="checkbox">Email5
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox15">
+                            <input type="checkbox" value="" id="checkbox15" data-toggle="checkbox">Email5
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'phone1' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox16">
+                            <input type="checkbox" value="" id="checkbox16" data-toggle="checkbox">Phone1
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox16">
+                            <input type="checkbox" value="" id="checkbox16" data-toggle="checkbox">Phone1
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'phone2' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox17">
+                            <input type="checkbox" value="" id="checkbox17" data-toggle="checkbox">Phone2
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox17">
+                            <input type="checkbox" value="" id="checkbox17" data-toggle="checkbox">Phone2
+                        </label>
+                    {% endif %}
+
+                    {% if 'phone3' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox18">
+                            <input type="checkbox" value="" id="checkbox18" data-toggle="checkbox">Phone3
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox18">
+                            <input type="checkbox" value="" id="checkbox18" data-toggle="checkbox">Phone3
+                        </label>
+                    {% endif %}
+
+                    {% if 'phone4' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox19">
+                            <input type="checkbox" value="" id="checkbox19" data-toggle="checkbox">Phone4
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox19">
+                            <input type="checkbox" value="" id="checkbox19" data-toggle="checkbox">Phone4
+                        </label>                    
+
+                    {% endif %}
+
+                    {% if 'phone5' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox20">
+                            <input type="checkbox" value="" id="checkbox20" data-toggle="checkbox">Phone5
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox20">
+                            <input type="checkbox" value="" id="checkbox20" data-toggle="checkbox">Phone5
+                        </label>                    
+                    {% endif %}
+
+                        </div>
+
+<!-- SSN -->
+                    <div class="xContactPage">
+                    <h6 class="demo-title">Social Network Information</h6>
+                    {% if 'facebook' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox21">
+                            <input type="checkbox" value="" id="checkbox21" data-toggle="checkbox">Facebook
+                        </label>
+                    {% else %}
+                        <label class="checkbox" for="checkbox21">
+                            <input type="checkbox" value="" id="checkbox21" data-toggle="checkbox">Facebook
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'twitter' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox22">
+                            <input type="checkbox" value="" id="checkbox22" data-toggle="checkbox">Twitter
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox22">
+                            <input type="checkbox" value="" id="checkbox22" data-toggle="checkbox">Twitter
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'googlePlus' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox23">
+                            <input type="checkbox" value="" id="checkbox23" data-toggle="checkbox">Google Plus
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox23">
+                            <input type="checkbox" value="" id="checkbox23" data-toggle="checkbox">Google Plus
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'linkedin' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox24">
+                            <input type="checkbox" value="" id="checkbox24" data-toggle="checkbox">Linkedin
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox24">
+                            <input type="checkbox" value="" id="checkbox24" data-toggle="checkbox">Linkedin
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'instagram' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox25">
+                            <input type="checkbox" value="" id="checkbox25" data-toggle="checkbox">Instagram
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox25">
+                            <input type="checkbox" value="" id="checkbox25" data-toggle="checkbox">Instagram
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'vimeo' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox26">
+                            <input type="checkbox" value="" id="checkbox26" data-toggle="checkbox">Vimeo
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox26">
+                            <input type="checkbox" value="" id="checkbox26" data-toggle="checkbox">Vimeo
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'github' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox27">
+                            <input type="checkbox" value="" id="checkbox27" data-toggle="checkbox">Github
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox27">
+                            <input type="checkbox" value="" id="checkbox27" data-toggle="checkbox">Github
+                        </label>                    
+                    {% endif %}
+
+                    {% if 'tumblr' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox28">
+                            <input type="checkbox" value="" id="checkbox28" data-toggle="checkbox">Tumblr
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox28">
+                            <input type="checkbox" value="" id="checkbox28" data-toggle="checkbox">Tumblr
+                        </label>        
+                    {% endif %}
+
+                    {% if 'blog' in selectedTemplateSections %}
+                        <label class="checkbox checked" for="checkbox29">
+                            <input type="checkbox" value="" id="checkbox29" data-toggle="checkbox">Blog
+                        </label>                    
+                    {% else %}
+                        <label class="checkbox" for="checkbox29">
+                            <input type="checkbox" value="" id="checkbox29" data-toggle="checkbox">Blog
+                        </label>
+                    {% endif %}
+
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div class="permissionButtonGroup">
+                        {% if selectedTemplateName == "" %}
+                        <a class="btn btn-embossed btn-wide addNewTemplate">Save</a>
+                        {% else %}
+
+                        <a class="btn btn-embossed btn-wide updateTemplate">Update</a>
+                            {% if 'friend' in request.path or 'default' in request.path %}
+                            {% else %}
+                            <a class="btn btn-embossed btn-wide deleteTemplate">Delete</a>
+                            {% endif%}
+                        {% endif %}
+
+                        <a href="/getPermissionTemplate/default"class="btn btn-embossed btn-wide">Cancel</a>
+                    </div>
+                
+
+ 
+        </div>
+
+    </div><!--End row-->
+    <div class="wTimeLineLoadContainer">
+        <i class="fa fa-refresh fa-spin fa-4x"></i>
+    </div>
+</div><!--End container-->
+{% endblock %}

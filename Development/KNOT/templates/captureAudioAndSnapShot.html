@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+<link href="{% static "css/captureAudioAndSnapshot.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="{% static "js/recorder.js" %}"></script>
+<script src="{% static "js/captureAudioAndSnapshot.js" %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="wContainer">
+	<video autoplay class="wVideoContainer"></video>
+	<img src="" class="wSnapshotContainer" height="480" width="640">
+	<canvas style="display:none;" height="480" width="640"></canvas>
+	<img src="{{card.imageURL}}" class="wSnapshotContainer" height="480" width="640" id='S3Image'>
+</div>
+<button type="button" class="btn btn-default" id="startVideoButton">Video</button>
+<button type="button" class="btn btn-default" id="snapShotButton">Snapshot</button>
+<button type="button" class="btn btn-default" id="uploadImageButton">Upload</button>
+
+<div class="wContainer">
+	<audio controls></audio>
+	<audio controls src="{{card.soundURL}}"></audio>
+</div>
+<button type="button" class="btn btn-default" id="startRecordButton">Start Record</button>
+<button type="button" class="btn btn-default" id="stopRecordButton">Stop Record</button>
+<button type="button" class="btn btn-default" id="upLoadAudioButton">Upload</button>
+{% endblock %}

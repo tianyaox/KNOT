@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Forget Password{% endblock %}
+
+{% load staticfiles %}
+{% block extraCss %}
+<link href="{% static "css/forget.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+            <div id="bRegister" class="container bRegisterContainer">
+                <div class="bRegisterImage"></div>
+                    <div class="bRegister">
+                        <form style="margin-top:35px" autocomplete="off" method="post" action="{% url forget %}">
+                            <div>
+                                <label class="sr-only">E-mail Address</label>
+                                <input type="email" placeholder="Enter email" name="email"/>
+                            </div>   
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-block bRegisterButton">Submit</button>
+                        </form>
+
+                        <div class="bLoginSlide">
+                            <a href="{% url login %}">Cancle</a>
+                        </div>
+                    </div>
+                    
+                    {% for error in errors %}
+                    <li class="bLoginError">{{ error }}</li>
+                    {% endfor %}               
+            </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

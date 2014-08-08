@@ -1,0 +1,85 @@
+.xBlocks{
+
+  width:50px;
+  height: 350px;
+  text-align: center;
+
+}
+
+div.tile{
+  margin:2px;
+  height: 100%;
+  padding: 10%;
+  background-color: #eff0f2;
+  border-radius: 2%;
+
+
+}
+
+
+
+.jumbotron.firstJumb{
+  background-color: #eceef0;
+  padding:30px;
+  overflow: hidden;
+  min-height: 500px;
+}
+.jumb1{
+ padding:40px;
+
+}
+
+.jumbotron.secondJumb{
+  background-color: white;
+  padding: 5%;
+}
+
+
+.leftWrapper{
+  width: 50%;
+  float: left;
+}
+
+.registerWrapper{
+  width: 50%;
+  float: left;
+  margin-top: 1%;
+  
+}
+  .registerWrapper input{
+    width:80%;
+    display: block;
+    margin:auto;
+    margin-bottom: 5px;
+
+  }
+
+.bResetSc{
+  margin-top: -31px;
+  margin-bottom: -3px;
+  color: #1abc9c;
+}
+
+button.bRegisterButton, button.bLoginButton{
+  width: 80%;
+  display: block;
+  margin:auto;
+}
+.bOther,.bLoginSlide{
+  font-size: 0.8em;
+  text-align: center;
+}
+.bOther a{
+  margin:5px; 
+}
+
+.bLoginError,.bRegisterError {
+  font-size: 0.6em;
+  color: red;
+  text-align: center;
+  
+}
+.bRegisterError{
+  display: inline-block;
+  margin: 5px;
+}

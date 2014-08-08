@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block extraCss %}
+<link href="{% static "css/login.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block header %}
+{% endblock %}
+
+{% block body %}      
+        <div id="bRegister" class="container bRegisterContainer">
+                <div class="bRegisterImage"></div>
+                    <div class="bRegister">
+                        <form style="margin-top:-7px" method="post" action="{% url register %}">
+                            <div>
+                                <label class="sr-only">Username</label>
+                                <input class="bRegisterUserName busername" placeholder="Username" name="username">
+                            </div>
+                            <div>
+                                <label class="sr-only">Email address</label>
+                                <input type="email" class="bRegisterEmail bemail" placeholder="Enter email" name="email">
+                            </div>
+                            <div>
+                                <label class="sr-only">Password</label>
+                                <input type="password" class="bRegisterPassword bpassword" placeholder="Password" name="password1">
+                            </div>
+                            <div>
+                                <label class="sr-only">Confirmed password</label>
+                                <input type="password" class="bRegisterPassword2 bpassword2" placeholder="Confirm Password" name="password2">
+                            </div>
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-block bRegisterButton">Sign Up</button>
+                        </form>
+
+                        <div class="bLoginSlide">
+                            <a href="#" id="bLoginSlide">Login</a>
+                        </div>
+                    </div>
+                    {% for error in errors %}
+                    <li class="bLoginError">{{ error }}</li>
+                    {% endfor %}               
+        </div>
+
+        <div id="bLogin" class="container bLoginContainer" style="display:none">
+            <div class="bLoginImage"></div>
+                <div class="bLogin">
+                    <form method="post" action="{% url django.contrib.auth.views.login %}" autocomplete="off">
+                        {{ form.username }}
+                        {{ form.password }}
+                        <div class="bOther">
+                            <a href="{% url forget %}">Forgot Password?</a>
+                            <a href="{% url register %}" id="bRegisterSlide">Register</a>
+                        </div>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-block bLoginButton">Login</button>
+                    </form>  
+                </div> 
+                {% if form.errors %}
+                <li class="bLoginError">Incorrect user name or password.</li>
+                {% endif %}             
+        </div>      
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block extraScript %}
+<script src="{% static "js/jquery-1.8.3.min.js" %}"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="{% static "js/login.js" %}"></script>
+{% endblock %}

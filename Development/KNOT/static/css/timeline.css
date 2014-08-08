@@ -1,0 +1,201 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+@import url('bootstrap.css');
+
+@import url('font-awesome.css');
+
+@import url('flat-ui.css');
+
+div.container.timelineContainer{
+  min-height:550px;
+}
+.wTimeLineContainer {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.wTimeLineLoadContainer {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  display: none;
+}
+.wTimeLineLeftContainer {
+  background-color: transparent;
+  height: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .wTimeLineLeftContainer {
+    float: left;
+    width: 41.66666666666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .wTimeLineLeftContainer {
+    margin-left: 8.333333333333332%;
+  }
+}
+.wTimeLineRightContainer {
+  background-color: transparent;
+  height: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .wTimeLineRightContainer {
+    float: left;
+    width: 41.66666666666667%;
+  }
+}
+.wTimeLineMiddleLine {
+  float: left;
+  left: 50%;
+  width: 5px;
+  height: 0%;
+  background: #1abc9c;
+}
+.wCardContainer {
+  background-color: #1abc9c;
+  min-height: 100px;
+  margin-top: 20px;
+  padding: 10px;
+  opacity: 0;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+@media (min-width: 1200px) {
+  .wCardContainer {
+    float: left;
+    width: 83.33333333333334%;
+  }
+}
+.wLeftCardContainer {
+  background-color: #1abc9c;
+  min-height: 100px;
+  margin-top: 20px;
+  padding: 10px;
+  opacity: 0;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+@media (min-width: 1200px) {
+  .wLeftCardContainer {
+    float: left;
+    width: 83.33333333333334%;
+  }
+}
+@media (min-width: 1200px) {
+  .wLeftCardContainer {
+    margin-left: 8.333333333333332%;
+  }
+}
+.wLeftCardContainer:before {
+  top: 25px;
+  left: 100%;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #1abc9c;
+  position: absolute;
+}
+.wRightCardContainer {
+  background-color: #1abc9c;
+  min-height: 100px;
+  margin-top: 20px;
+  padding: 10px;
+  opacity: 0;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+@media (min-width: 1200px) {
+  .wRightCardContainer {
+    float: left;
+    width: 83.33333333333334%;
+  }
+}
+@media (min-width: 1200px) {
+  .wRightCardContainer {
+    margin-left: 8.333333333333332%;
+  }
+}
+.wRightCardContainer:after {
+  left: -10px;
+  top: 35px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #1abc9c;
+  position: absolute;
+}
+.wClearFloat {
+  clear: both;
+}
+.wTimeLineMiddleLineIcon {
+  position: absolute;
+  color: #dcdcdc;
+  font-size: 10px;
+  opacity: 0;
+}
+.wTimeLineSideBarContainer {
+  float: right;
+}
+.wTimeLineSideBarContainer > ul {
+  list-style: none;
+  display: block;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  background: url("../img/timelineSideBarBackground.png") no-repeat;
+  -webkit-background-size: 50% 100%;
+}
+.wTimeLineSideBarContainer > ul > li {
+  margin-top: 5px;
+  width: 90px;
+}
+.wTimeLineSideBarContainer > ul > li > a {
+  height: 30px;
+  -webkit-transition: all 0.3s ease-out;
+  background: #34495e url("../img/timelineSideBarBorder.png") no-repeat;
+  color: white;
+  padding: 7px 15px 7px 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  display: block;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  width: 110%;
+  position: relative;
+  font-size: 0.9em;
+}
+.wTimeLineSideBarContainer > ul > li > a:hover {
+  width: 120px;
+  padding-left: 27px;
+  background: #1abc9c url("../img/timelineSideBarBorder.png") no-repeat;
+}
+
+

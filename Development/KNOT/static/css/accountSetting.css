@@ -1,0 +1,108 @@
+div.settingContainer{
+  min-height: 430px;
+}
+.bPasswordChange, .bAccountChange {
+	margin: 0 0 10% 0;
+}
+
+.bAccountSetting{
+	background-color: #eceef0;
+  overflow: hidden;
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+	font-weight: lighter;
+	width:80%;
+	margin: auto;
+	border-radius: 5px;
+	/*height:350px;*/
+	color:black;
+  padding: 5%;
+
+}
+
+.bSettingTitle {
+	margin: 10px 10px;
+  font-size: 1.2em;
+  color:#526476;
+
+}
+
+.bSettingSide {
+	border-bottom: 1px solid grey;
+	margin: 10px 10px;
+	padding-bottom: 20px;
+	color: rgb(130, 130, 136);
+  font-size: 1.2em;
+
+}
+
+.bResetPassword {
+  margin-top: 2%;
+}
+
+.bInputPw {
+	width: 50%;
+	margin: 10px auto;
+}
+
+.bSaveChange{
+	width: 50%;
+	margin-top: 3%;
+	margin: auto;
+	background: #1abc9c;
+}
+.bChangeSuc{
+	margin: 0% 10%;
+	color: #1abc9c;
+	font-size: 22px;
+	
+}
+.bChangeError{
+	margin: 0% 10%;
+  color: red;
+}
+
+.bTimeLineSideBarContainer {
+  float: right;
+}
+.bTimeLineSideBarContainer > ul {
+  list-style: none;
+  display: block;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  background: url("../img/timelineSideBarBackground.png") no-repeat;
+  -webkit-background-size: 50% 100%;
+}
+.bTimeLineSideBarContainer > ul > li {
+  margin-top: 5px;
+  width: 90px;
+}
+.bTimeLineSideBarContainer > ul > li > a {
+  height: 30px;
+  -webkit-transition: all 0.3s ease-out;
+  background: #34495e url("../img/timelineSideBarBorder.png") no-repeat;
+  color: white;
+  padding: 7px 15px 7px 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  display: block;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  width: 110%;
+  position: relative;
+  font-size: 0.9em;
+}
+.bTimeLineSideBarContainer > ul > li > a:hover {
+  width: 120px;
+  padding-left: 27px;
+  background: #1abc9c url("../img/timelineSideBarBorder.png") no-repeat;
+}
+.bUpdateSuc {
+  text-align: center;
+margin: 10% auto;
+color: #1abc9c;
+}

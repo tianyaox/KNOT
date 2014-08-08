@@ -1,0 +1,126 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+@import url('bootstrap.css');
+
+@import url('font-awesome.css');
+
+@import url('flat-ui.css');
+body {
+  color: #000000;
+}
+a {
+  color: #000000;
+}
+.wBorderWidthAndColor {
+  border-width: 2px;
+  border-color: #cccccc;
+}
+.wNotificationContainer {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.wNotificationLeftContainer {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  height: 100%;
+  padding-right: 0px;
+}
+@media (min-width: 1200px) {
+  .wNotificationLeftContainer {
+    float: left;
+    width: 16.666666666666664%;
+  }
+}
+@media (min-width: 1200px) {
+  .wNotificationLeftContainer {
+    margin-left: 8.333333333333332%;
+  }
+}
+.wNotificationCenterContainer {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  height: 100%;
+  border-left-style: solid;
+  border-width: 2px;
+  border-color: #cccccc;
+}
+@media (min-width: 1200px) {
+  .wNotificationCenterContainer {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+.wNotificationSectionContainer {
+  background-color: transparent;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border-width: 2px;
+  border-color: #cccccc;
+}
+.wNotificationList > li {
+  list-style-type: none;
+  padding-left: 40px;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: #cccccc;
+}
+.wNotificationList > li:first-child {
+  padding-left: 0px;
+  font-size: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-color: black;
+}
+.wNotificationList > li:last-child {
+  border-bottom-style: none;
+}
+.wNotificationList > li > button {
+  float: right;
+  height: 22px;
+  padding-top: 0px;
+}
+.wNotificationList > li > button p {
+  float: right;
+}
+#wCenterTitle {
+  font-size: 22px;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-color: black;
+}
+.nav-list > li > a {
+  font-size: 20px;
+}
+li i {
+  margin-right: 10px;
+}
+.wNotificationName {
+  display: inline;
+  padding: 3px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.wNotificationName:hover {
+  display: inline;
+  color: #1abc9c;
+  background-color: #eeeeee;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+div.container.notificationContainer{
+  min-height: 550px;
+}

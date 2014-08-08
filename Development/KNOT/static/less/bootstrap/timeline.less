@@ -1,0 +1,166 @@
+@import url('bootstrap.css');
+@import url('font-awesome.css');
+@import url('flat-ui.css');
+@import "variables.less";
+@import "mixins.less";
+
+@wBackgroundColor : transparent;
+@wLeftBackgroundColor : transparent;
+@wRightBackgroundColor : transparent;
+@wCardBackgroundColor : rgb(26,188,156);
+// @wMiddleLineColor: #e6e6e6;
+@wMiddleLineColor: rgb(26,188,156);
+@wLeftArrowTop: 25px;
+@wRightArrowTop: 35px;
+@wArrowSize: 10px;
+@wMiddleLineWidth: 5px;
+@wMiddleLineIconSize: 10px;
+@wSideBarElementColor: rgb(52,73,94);
+@wSideBarElementWidth: 70px;
+@wSideBarElementDeltaWidth:20px;
+
+
+.rounded-corners (@radius: 8px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.wTimeLineContainer{
+	// height: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.wTimeLineLoadContainer{
+	text-align: center;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	display: none;
+}
+
+.wTimeLineLeftContainer{
+	background-color: @wLeftBackgroundColor;
+	height: 100%;
+  	.make-lg-column(5);
+  	.make-lg-column-offset(1);
+}
+
+.wTimeLineRightContainer{
+	background-color: @wRightBackgroundColor;
+	height: 100%;
+  	.make-lg-column(5);
+}
+
+.wTimeLineMiddleLine{
+	float: left;
+	left: 50%;
+	width: @wMiddleLineWidth;
+	height: 0%;
+	background: @wMiddleLineColor;
+}
+
+.wCardContainer{
+	background-color: @wCardBackgroundColor;
+	min-height: 100px;
+	margin-top: 20px;
+	padding: 10px;	
+	opacity: 0;
+  	.make-lg-column(10);
+  	.rounded-corners;
+}
+
+.wLeftCardContainer{
+	.wCardContainer;
+	.make-lg-column-offset(1);
+	// display: none;
+}
+.wLeftCardContainer:before{
+	.wRightArrow(@wArrowSize,@wLeftArrowTop);
+}
+
+.wRightCardContainer{
+	.wCardContainer;
+	.make-lg-column-offset(1);
+	// display: none;
+}
+.wRightCardContainer:after{
+	.wLeftArrow(@wArrowSize,@wRightArrowTop);
+}
+
+.wRightArrow(@size:10px, @top:20px){
+	top: @top;
+	left: 100%;
+    content:"";
+    width:0;
+    height:0;
+    border-top:@size solid transparent;
+    border-bottom:@size solid transparent;
+    border-left:@size solid @wCardBackgroundColor;
+    position: absolute;	
+}
+
+.wLeftArrow(@size:10px, @top:20px){
+	left: -@size;
+	top: @top;
+    content:"";
+    width:0;
+    height:0;
+    border-top:@size solid transparent;
+    border-bottom:@size solid transparent;
+    border-right:@size solid @wCardBackgroundColor;
+    position: absolute;
+}
+
+
+.wClearFloat{
+	clear: both;
+}
+
+.wTimeLineMiddleLineIcon{
+  position: absolute;
+  color: rgb(220,220,220);
+  font-size: @wMiddleLineIconSize;
+  opacity: 0;
+}
+
+
+.wTimeLineSideBarContainer{
+	float: right;
+}
+
+.wTimeLineSideBarContainer>ul{
+	list-style: none;
+	display: block;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	position: relative;
+	background: url("../img/timelineSideBarBackground.png") no-repeat;
+	-webkit-background-size: 50% 100%;
+}
+.wTimeLineSideBarContainer>ul>li{
+	// background-color: @wSideBarElementColor;
+	margin-top: 5px;
+	width: @wSideBarElementWidth+@wSideBarElementDeltaWidth;
+}
+.wTimeLineSideBarContainer>ul>li>a{
+	height: 30px;
+	-webkit-transition: all 0.3s ease-out;
+	background: @wSideBarElementColor url("../img/timelineSideBarBorder.png") no-repeat;
+	color: white;
+	padding: 7px 15px 7px 15px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	display: block;
+	text-decoration: none;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	width: @wSideBarElementWidth;
+	position: relative;
+}
+.wTimeLineSideBarContainer>ul>li>a:hover{
+	width: @wSideBarElementWidth+@wSideBarElementDeltaWidth;
+	padding-left: 7px+@wSideBarElementDeltaWidth;
+	background: @wCardBackgroundColor url("../img/timelineSideBarBorder.png") no-repeat;
+}

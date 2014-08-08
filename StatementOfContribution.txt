@@ -1,0 +1,45 @@
+Mutual 
+Design the model of each component
+Integration Test
+Debug 
+Maintain Product Backlog
+Maintain Sprint Backlog
+Act as Scrum Leader
+
+Mengyan Wang
+Card Component Backend
+Friend Component Backend
+Notification Component Backend
+Permission Component Backend
+Social Network Component Backend 
+Storage Component Backend
+Unit Test for Card, Friend, Notification, Permission, Social Network and Storage Component
+Record Voice and Capture Voice HTML5 and JS code
+Deploy the Website to Amazon EC2 + RDS
+Upload File to Amazon S3
+
+
+Tianyao Xu
+Index page front end
+Header/ Footer front end
+My Card Page front end
+Other Card Page front end
+Search/Contact Page Small Cards front end
+Permission Level Page front end
+All front end work contains html template and css
+Timeline part javascript, containing tag changing
+My Card Page javascript, containing animation,request sending and ajax
+Contacts Page javascript, containing animation and request sending
+Search Page javascript, containing animation, request sending and ajax
+Permission Level Page javascript, containing request sending and ajax
+
+
+Wenbing Bai
+UserManagement Session include register, sign in, sign out, account setting back end and front end
+Guide Session front end
+Map and city search auto complete functions
+Search, Contact pages front end
+SNS API front end
+
+
+

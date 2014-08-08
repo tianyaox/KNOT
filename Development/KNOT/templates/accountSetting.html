@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Account Setting{% endblock %}
+
+{% block extraCss %}
+{% load staticfiles %}
+
+    <link href="{% static "css/reset.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" >
+    <link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+    <link  href="{% static "css/accountSetting.css" %}" rel="stylesheet/less">
+    <script src="{% static "js/less-1.4.1.min.js" %}" type="text/javascript"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+        
+      <div class="settingContainer">
+        <div class="bTimeLineSideBarContainer">
+            <ul>
+                <li><a class="bAccountLink" href="#">Account</a></li>
+                <li><a class="bPasswordLink" href="#">Password</a></li>
+            </ul>
+        </div>
+        <div class="bPasswordChange">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    {% if success1 %}
+                      <p class="bChangeSuc">{{success1}}</p>
+                      {% endif %}
+                    <div class="bAccountSetting">
+                      
+                      <h4 class="bSettingTitle">Password</h4>
+                      <h6 class="bSettingSide">Change your password or recover your current one.</h6>
+                      <form class="bResetPassword" method="post" aciton="{% url account 1 %}">
+                        <input type="password" class="form-control bInputPw" placeholder="Current password" name="password0"/>
+                        <input type="password" class="form-control bInputPw" placeholder="New password" name="password1"/>
+                        <input type="password" class="form-control bInputPw" placeholder="Confirm new password" name="password2"/>
+                        <button type="submit" class="bSaveChange btn btn-block btn-flat">Save Changes</button>
+                        {% csrf_token %}
+                      </form> 
+                    
+                    </div>
+                    {% for error in errors %}
+                    <li class="bChangeError">{{error}}</li>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>            
+
+        </div>
+
+        <div class="bAccountChange">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p id="bAccountSuc" class="bChangeSuc"></p>
+                    <div class="bAccountSetting">
+                      
+                      <h4 class="bSettingTitle">Account</h4>
+                      <h6 class="bSettingSide">Change your account email address</h6>
+                      
+                      <input type="email" class="form-control bInputPw" value="{{email}}" name="email"/>
+                      
+                      <button type="submit" id="bEmailChange" class="bSaveChange btn btn-block btn-flat">Save Changes</button>
+
+                    </div>
+                    
+                    <div id="bAccountChangeError"></div>
+                    
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>            
+
+        </div>
+
+
+      </div>
+
+{% endblock %}
+
+{% block extraScript %}
+{% load staticfiles %}
+
+<script src="{% static "js/accountSetting.js" %}"></script>
+
+{% endblock %}

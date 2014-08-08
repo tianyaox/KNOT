@@ -1,0 +1,211 @@
+.bIndexContainer {
+  margin: 10% auto;
+  width: 500px;
+  height: 250px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.bRegisterContainer {
+  margin: 10% auto;
+  width: 500px;
+  height: 250px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #ffffcc;
+}
+.bImage {
+  width: 50%;
+  height: 100%;
+  margin: 6% 0%;
+  display: inline-block;
+}
+.bRegisterImage {
+  width: 50%;
+  height: 82%;
+  margin: 6% 0%;
+  display: inline-block;
+  background: url("../img/SignIn.png") no-repeat;
+}
+.bRegister {
+  width: 45%;
+  height: 80%;
+  margin: 4% 3%;
+  display: inline-block;
+  position: absolute;
+}
+.bInput {
+  width: 200px;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: #C8C8C8 solid 2px;
+  color: black;
+  background: #FFFFCC;
+  outline: none;
+  margin: auto;
+  margin-top: -2px;
+  margin-bottom: 0px;
+}
+.bRegister input {
+  width: 200px;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: #C8C8C8 solid 2px;
+  color: black;
+  outline: none;
+  margin: auto;
+  margin-top: -2px;
+  margin-bottom: 0px;
+  background: #FFFFCC;
+}
+.bRegisterUserName {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-top: #C8C8C8 solid 2px !important;
+  height: 40px;
+}
+.bRegisterPassword2 {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  height: 40px;
+}
+.bRegisterPassword {
+  margin-top: -4px;
+  height: 40px;
+}
+.bRegisterEmail {
+  height: 40px;
+}
+.bIndexButton {
+  margin-top: 9%;
+  width: 200px;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 7px 10px 10px;
+  display: inline-block;
+}
+.bRegisterButton {
+  margin-top: 5%;
+  width: 200px !important;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 7px 10px 10px;
+  display: inline-block;
+  background-color: #88D9E4;
+}
+.bLoginSlide {
+  margin-top: 3%;
+  margin-left: 38%;
+  font-size: 15px;
+}
+.bLoginSlide a:hover {
+  text-decoration: underline;
+}
+.bLoginContainer {
+  margin: 10% auto;
+  width: 500px;
+  height: 250px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #CCFFFF;
+}
+.bLoginImage {
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin: 6% 0%;
+  display: inline-block;
+  background: url("../img/Login.png") no-repeat;
+}
+.bLogin {
+  display: inline-block;
+  position: absolute;
+  width: 45%;
+  height: 80%;
+  margin: 6% 3%; 
+}
+.bLogin input {
+  width: 200px;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: #C8C8C8 solid 2px;
+  color: black;
+  background: #FFFFCC;
+  outline: none;
+  margin: auto;
+  margin-top: -2px;
+  margin-bottom: 0px;
+  background: #CCFFFF;
+}
+.bLoginButton {
+  margin-top: 9%;
+  width: 200px !important;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 7px 10px 10px;
+  display: inline-block;
+  background: #88D9E4;
+}
+.bOther {
+  margin-top: 20px;
+}
+.bOther a:hover {
+  text-decoration: underline;
+}
+#bRegisterSlide {
+  margin-left: 20px;
+}
+.bLoginError {
+  position: absolute;
+  bottom: -20px;
+  margin: 0% 0%;
+  color: red;
+}
+.bRegisterError {
+/*  position: absolute;
+  bottom: -20px;*/
+  margin: 0% 0%;
+  color: red;
+}
+.bRegisterError{
+  margin: 0% 0%;
+  color: red;
+}
+
+
+.jumbotron.firstJumb{
+  background-color: #eceef0;
+  padding:30px;
+}
+.jumb1{
+ padding:40px; 
+}
+
+.jumbotron.secondJumb{
+  background-color: white;
+}
+
+.bResetSc{
+  margin-top: -31px;
+  margin-bottom: -3px;
+  color: #1abc9c;
+}

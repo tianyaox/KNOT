@@ -1,0 +1,19 @@
+//首先安装pip
+运行 get-pip.py
+
+//然后安装virtualenv 虚拟环境
+pip install http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.7.2.tar.gz
+
+//建立虚拟环境（在Development下执行这条命令）
+virtualenv –p python2.6 ./djangodev
+
+
+//开启虚拟环境
+source ./djangodev/bin/activate
+
+//安装django1.4.1
+pip install django==1.4.1
+
+//安装mysql-python
+export PATH=$PATH:/usr/local/mysql/bin //根据你mysql的安装位置调整这个命令
+pip install mysql-python==1.2.3

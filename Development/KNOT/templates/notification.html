@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block extraCss %}
+{% load staticfiles %}
+<link href="{% static "css/notification.css" %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+
+{% block extraScript %}
+{% load staticfiles %}
+<script src="{% static "js/notification.js" %}"></script>
+{% endblock %}
+
+
+{% block body %}
+<div class="container notificationContainer">
+    <div class="wNotificationLeftContainer">
+    	<div class="wNotificationSectionContainer">
+			<ul class="nav nav-list">
+			  <li class="wNavigationAll"><a><i class="fa fa-th-list fa-fw"></i>All</a></li>
+        <li class="wNavigationConfirm"><a href="#"><i class="fa fa-check-square-o fa-fw"></i>Confirm</a></li>
+			  <li class="wNavigationReminder"><a href="#"><i class="fa fa-bullhorn fa-fw"></i></i>Reminder</a></li>
+			  <li class="wNavigationTag"><a href="#"><i class="fa fa-bookmark-o fa-fw"></i>Tag</a></li>
+        <li class="wNavigationConRequest"><a href="#"><i class="fa fa-group fa-fw"></i>Request</a></li>
+			
+      </ul>  		
+    	</div>
+
+
+    </div>
+    <div class="wNotificationCenterContainer">
+    	<div class="wNotificationSectionContainer">
+			<ul class="wNotificationList">
+			  <li id="wCenterTitle">Notifications</li>
+			</ul>  		
+    	</div>
+    	<div class="wNotificationSectionContainer" id="wTemplateContainer" style="display:none;">
+			<ul class="wNotificationList">
+			    <li class="wListTitle">Today</li>
+  			  <li><i class="fa fa-group fa-fw"></i><div class="wNotificationName">John</div>  wanted  to  be  your  friend</li>
+  			  <li><i class="fa fa-bullhorn fa-fw"></i><div class="wNotificationName">David</div>  changed  his  phone  number</li>	
+  			  <li><i class="fa fa-bullhorn fa-fw"></i><div class="wNotificationName">Ronney</div>  changed  his  phone  number</li>
+  			  <li><i class="fa fa-bookmark-o fa-fw"></i><div class="wNotificationName">Mengyan</div>  added  a  nickname  to  <div class="wNotificationName">John</div></li>	  
+			</ul>  		
+    	</div>
+
+    <!-- 	<div class="wNotificationSectionContainer">
+			<ul class="wNotificationList">
+			  <li class="wListTitle">Yesterday</li>
+  			  <li><i class="fa fa-group fa-fw"></i><div class="wNotificationName">John</div>  wanted  to  be  your  friend</li>
+  			  <li><i class="fa fa-bookmark-o fa-fw"></i><div class="wNotificationName">Mengyan</div>  added  a  nickname  to  <div class="wNotificationName">John</div></li>  
+			</ul>   		
+    	</div>
+
+    	<div class="wNotificationSectionContainer">
+			<ul class="wNotificationList">
+			  <li class="wListTitle">Oct 31th</li>
+  			  <li><i class="fa fa-group fa-fw"></i><div class="wNotificationName">John</div>  wanted  to  be  your  friend</li>
+  			  <li><i class="fa fa-bullhorn fa-fw"></i><div class="wNotificationName">David</div>  changed  his  phone  number</li>	
+  			  <li><i class="fa fa-bullhorn fa-fw"></i><div class="wNotificationName">Ronney</div>  changed  his  phone  number</li>
+  			  <li><i class="fa fa-bookmark-o fa-fw"></i><div class="wNotificationName">Mengyan</div>  added  a  nickname  to  <div class="wNotificationName">John</div></li>	  
+			</ul>   		
+    	</div> -->
+
+    </div>
+</div>
+{% endblock %}
+
+
+

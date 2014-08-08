@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}My Card{% endblock %}
+
+{% block extraCss %}
+{% load staticfiles %}
+
+    <link href="{% static "css/reset.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" >
+    <link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+    <link  href="{% static "css/accountSetting.css" %}" rel="stylesheet/less">
+    <script src="{% static "js/less-1.4.1.min.js" %}" type="text/javascript"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+        
+      <div class="container">
+        
+            
+
+        <div class="bAccountChange">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    
+                    <div class="bAccountSetting">
+                      
+                      <h4 class="bSettingTitle">Account</h4>
+                      <h6 class="bSettingSide">Change your account email address</h6>
+                      
+                      <h6 class="bUpdateSuc">{{message}}</h6>
+
+                    </div>
+                    
+                    
+                    
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>            
+
+        </div>
+
+
+      </div>
+
+{% endblock %}
+
+{% block extraScript %}
+{% load staticfiles %}
+
+<!-- <script src="{% static "js/accountSetting.js" %}"></script> -->
+
+{% endblock %}

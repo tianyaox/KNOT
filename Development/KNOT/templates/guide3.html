@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Guide Page{% endblock %}
+
+{% block extraCss %}
+{% load staticfiles %}
+
+    <link href="{% static "css/reset.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" >
+    <link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+    <link  href="{% static "css/guide.css" %}" rel="stylesheet/less">
+    <script src="{% static "js/less-1.4.1.min.js" %}" type="text/javascript"></script>
+
+
+{% endblock %}
+
+{% block header %}{% endblock %}
+{% block body %}
+        <div class="bContent">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="bShowCard">
+
+                        <div class="bShowProfileThree">
+                            <h4>Add Your Information</h4>
+                            <h6 class="bStepTwoHead">Add your title, phone and email</h6>
+                            <form class="bStepThreeForm" method="post" action="{% url guide 3 %}">{% csrf_token %}
+                                <input type="text" class="form-control bStepThreeInput" placeholder="Title" name="title" value="{{title}}">
+                                <input type="text" class="form-control bStepThreeInput" placeholder="xxx-xxx-xxxx" name="telphone" value="{{phone}}">
+                                <input type="email" class="form-control bStepThreeInput" placeholder="Email" name="email" value="{{email}}">
+                                {% if linkedin %}
+                                <button class="btn btn-primary bStepThreeButton" style="margin-top:4px">Next</button>
+                                {% else %}
+                                <a title="Click here to link with LinkedIn" href="{% connectLinkedinGetContactInfo %}" class="bLinkedInInfo"><i class="fa fa-linkedin-square fa-3x"></i></a>
+                                <button class="btn btn-primary bStepThreeButton">Next</button>
+                                {% endif %}
+                            </form>
+                            {% for error in errors %}
+                            <li style="margin-top:4px;color:red">{{error}}</li>
+                            {% endfor %}
+                        </div>
+
+                    </div>         
+                </div>
+                <div class="col-md-2"></div>
+            </div>            
+        </div>
+
+
+{% endblock %}
+
+{% block extraScript %}
+{% load staticfiles %}
+    <script type="text/javascript" src="{% static "js/guide.js" %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/js/bootstrap.min.js"></script>
+{% endblock %}
+

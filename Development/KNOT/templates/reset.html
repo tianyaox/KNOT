@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Forget Password{% endblock %}
+
+{% load staticfiles %}
+{% block extraCss %}
+<link href="{% static "css/login.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/flat-ui.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+<div id="bLogin" class="container bLoginContainer">
+            <div class="bLoginImage"></div>
+                <div class="bLogin">
+                    <form style="margin-top:25px" method="POST" action="{% url reset_password1 email %}" autocomplete="off">
+                        <input class="form-control" type="password" placeholder="Password" name="password1" style="width:50%;margin:auto;display:block;margin-bottom:10px;">
+                        <input class="form-control" type="password" placeholder="Confirm password" name="password2" style="width:50%;margin:auto;display:block;margin-bottom:10px;">
+                        <button type="submit" class="btn btn-block bRegisterButton" style="width:50%;margin:auto;;display:block;margin-bottom:10px;">Submit</button>
+                        {% csrf_token %}
+                    </form>  
+                </div> 
+                <ul class="bLoginError" style="bottom:-40px;">
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}    
+                </ul>         
+        </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

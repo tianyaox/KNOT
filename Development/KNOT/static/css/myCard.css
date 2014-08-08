@@ -1,0 +1,796 @@
+/*@theme-color: white;*/
+@theme-color: #34495e;
+@dark-blue: #2c3e50;
+@green:#16a085;
+@card:#EBEAE3;
+
+/*@profile: #33595A;*/
+@profile: white;
+
+@address: #C06B61;
+
+/*@ssn: #BFA997;*/
+
+@ssn:white;
+@facebook: #3b5998;
+@twitter: #4099FF;
+@google-plus:#D34836;
+@info: #5B233B;
+
+@innergap:5px;
+
+
+.pac-container {
+    z-index: 1051 !important;
+}
+
+
+header.navbar {
+	background-color: @theme-color;
+}
+
+.xContent{
+	margin: 5% 0;
+}
+
+
+.xCard{
+	background-color: @card;
+	height: 350px;
+	width: 80%;
+	margin: auto;
+	/*box-shadow: 0 0 10px gainsboro;*/
+	overflow: hidden;
+	font-weight: lighter;
+
+}
+
+.xShowCard{
+	.xCard;
+	width:80%;
+	margin: auto;
+
+	height:350px;
+	/*color: white;*/
+	color:black;
+	border-radius: 6px;
+	
+}
+
+.xShowCard a {
+	/*color: white;*/
+	color:gray;
+
+}
+
+.xShowCardLeft{
+	width: 50%;
+	height: 100%;
+	float: left;
+	padding: 2% 2%;
+	padding-right: @innergap;
+}
+.xShowCardRight{
+	.xShowCardLeft;
+	padding-right: 2%;
+	padding-left: @innergap;
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	float: left;
+
+}
+
+
+.xShowProfile {
+	box-sizing: border-box;
+	width:100%;
+	height: 50%;
+	padding-bottom: @innergap;
+}
+.xShowProfile div{
+	background-color: @profile;
+	// background-image: url('../img/light_toast.png');
+	padding: 2% 2%;
+	overflow: hidden;	
+	height: 100%;
+}
+
+.xShowInfoNew{
+	.xShowProfile;
+	height:100%;
+	background-color: @profile;
+	color: black;
+	a {
+		color:black;
+	}
+	>div{
+		padding: 2% 2%;
+		overflow: hidden;	
+		height: 100%;
+	}
+	ul {
+		font-size: 1.1em;
+		margin-left: 10%;
+		margin-top: 20px;
+		li{
+			margin-bottom: 20px;
+		}
+	}
+	ul i{
+		margin-right: 5px;
+		width: 25px;
+		display: inline-block;
+		font-size: 1.2em;
+	}
+
+}
+
+.xShowAddress div {
+	padding: 2% 2%;
+	overflow: hidden;	
+	height: 100%;
+	background-color: @address;
+}
+.xShowInfo div {
+	padding: 2% 2%;
+	overflow: hidden;	
+	height: 100%;
+	background-color: @info;
+}
+.xShowAddress{
+	.xShowProfile;
+}
+
+.xShowInfo{
+	.xShowProfile;
+	padding-top: @innergap;
+	padding-bottom: 0;
+}
+
+	.xShowInfo ul {
+		font-size: 0.9em;
+		margin-left: 10%;
+		margin-top: 5%;
+	}
+	.xShowInfo ul i{
+		margin-right: 5px;
+		width: 25px;
+		display: inline-block;
+		font-size: 1.2em;
+	}
+
+.xShowProfile .xShowLeft{
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+
+.xShowProfile .xShowLeft div{
+	height: 100%;
+}
+
+
+.xShowProfile .xShowRight{
+	.xShowProfile .xShowLeft;
+	margin-top: 5%;
+	li{
+		margin-bottom: 10px;
+	}
+	img{
+		width:5%;
+		margin-bottom: 2px;
+	}
+}
+
+.xShowProfile .xShowRight a{
+	text-align: center;
+	display: block;
+	font-size: 1.3em;
+	margin:5px;
+}
+
+.xShowProfile .xShowRight p{
+	text-align: center;
+	display: block;
+	font-size: 1.0em;
+
+
+}
+
+.xShowProfile.face.back div form{
+	input {
+		margin-bottom: 5px;
+	}
+	input:nth-of-type(1){
+		width:28.5%;
+		float: left;
+		margin-right: 1.5%;
+	}
+	input:nth-of-type(2){
+		width:28.5%;
+		float: left;
+		margin-right: 1.5%;
+	}
+
+}
+.xShowProfilePicture {	
+	height:50%;
+}
+
+.xShowProfilePicture img{
+	/*border-radius: 100%;*/
+	width: 97%;
+	height: 100%;
+	padding: 3%;
+	display: block;
+	margin: auto;
+}
+
+
+.xShowSSN{
+	box-sizing: border-box;
+	display: block;
+	width:100%;
+	height: 50%;
+	padding-top: @innergap;
+	padding-left:0;
+	float: left;
+}
+
+.xShowSSN > div{
+	background-color: @ssn;
+	height: 50%;
+	padding-top: 3%;
+	text-align: center;
+	>div{
+		display: inline-block;
+		margin: 10px;
+		a{
+			display: block;
+		}
+		
+		a i.bFacebook {
+			color: @facebook;
+		}
+		a i.bTwitter {
+			color: @twitter;
+		}
+		a i.bGooglePlus {
+			color: @google-plus;
+		}
+		a i.bLinkedin {
+			color: #0e76a8;
+		}
+		a i.bInstagram {
+			color: brown;
+		}
+		a i.bGithub {
+			color: #4183C4;
+		}
+		a i.bTumblr {
+			color: #385774;
+		}
+		a i.bVimeo {
+			color: #345;
+		}
+	}
+
+
+}
+
+
+
+
+/*.xShowTwitter{
+	.xShowFacebook;
+	padding-left: @innergap;
+	padding-right:0;
+}
+
+.xShowTwitter div{
+	background-color: @twitter;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.xShowTwitter div a{
+	color: white;
+	text-align: center;
+	display: block;
+}*/
+
+
+.xShowAddress a{
+	color: white;
+	text-align: center;
+	display: block;
+	margin-top: 10%
+}
+.xShowAddress p{
+	font-size: 1em;
+	margin-top: 10%;
+	float:left;
+}
+
+.xProfilePicture{
+	margin: 10%;
+}
+
+.xProfilePicture img{
+	border-radius: 100%;
+	width:100%;
+	height: 155px;
+	border: 1px solid white;
+	padding: 3%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+.xCard-left a{
+	text-align: center;
+	display: block;
+	color: white;
+	font-size: 1.5em;
+
+}
+
+.xCard-left {
+	background-color: @dark-blue;
+	height: 430px;
+}
+
+
+
+.xCard p{
+	text-align: center;
+	color:darken(white,20%);
+	font-size: 1em;
+
+}
+
+.xCard-right {
+	overflow: hidden;
+	margin: 5%;
+	margin-top: 7%;
+}
+	.xCard-right .content-label {
+		float: left;
+		width: 30%;
+
+	}
+
+		.xCard-right .content-label a:first-of-type{
+			font-size: 2.5em;
+			margin-left: 20px;
+
+		}
+		.xCard-right .content-label a:nth-of-type(2){
+			font-size: 2.5em;
+			margin-left: 3px;
+
+		}
+
+	.xCard-right .content-form {
+		float: left;
+		width: 70%;
+	}
+		.xCard-right .content-form input{
+			height: 1.5em;
+			margin-bottom: 0.7em;
+		}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-style:solid;
+	border-width: 14px 14px 0 0;
+	border-color:darken(@green,10%) transparent transparent transparent;
+	position: absolute;
+	right: 85px;
+	bottom: 21px;
+}
+
+#submit {
+	position: absolute;
+	bottom: 35px;
+	background: #16a085;
+	color: white;
+	right: 84px;
+	padding: 1% 1.5%
+}
+
+#gender-selector .radio .icons span{
+	background: none;
+}
+
+#gender-selector .radio {
+	display: inline-block;
+	margin: 0px;
+	margin-top: 0.1em;
+	margin-bottom: 1em;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:darken(#aaaaaa,20%)!important;
+}
+
+			.xFlipcardContainer {
+				position: relative;
+				width:100%;
+				height: 50%;
+				z-index: 1;
+				
+				-webkit-perspective: 1000px;
+				-moz-perspective: 1000px;
+				-o-perspective: 1000px;
+				perspective: 1000px;
+			}
+
+			.xShowCardRight .xFlipcardContainer{
+				height: 100%;
+			}
+
+
+
+			.xFlipcardContainer .flipcard{
+				width: 100%;
+				height: 100%;
+
+				-webkit-transform-style: preserve-3d;
+				-webkit-transition: all 0.75s linear;
+				
+				-moz-transform-style: preserve-3d;
+				-moz-transition: all 0.75s linear;
+				
+				-o-transform-style: preserve-3d;
+				-o-transition: all 0.75s linear;
+				
+				transform-style: preserve-3d;
+				transition: all 0.75s linear;
+			}
+
+/*			#xFlipcardContainer .flipcard:hover , #xFlipcardContainer .flipcard.hover_effect{
+				
+			}*/
+
+.xIcons{
+	display: none;
+	/*float: right;*/
+	font-size: 1.1em;
+	/*margin-top: 30px;*/
+	position: absolute;
+	top:auto;
+	bottom: 15px;
+	right: 5px;	
+}
+.xIconsOnHover{
+	display: block;
+}
+
+.front a.xEditIcon{
+	.xIcons;
+}
+.front a.xCameraIcon{
+	.xIcons;
+	right: 30px;
+}
+.front a.xRecordIcon{
+	.xIcons;
+	right: 60px;
+
+}
+
+
+.xFlipcardContainer .flipcard:hover a.xEditIcon{
+	.xIconsOnHover;
+}
+
+.back a.xEditIcon{
+	float:right;
+	margin-right:5px;
+	margin-top:5px;
+
+}
+.flip {
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotate3d(0,100,0,180deg);
+}
+
+.face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+}
+
+.face.back {
+	display: block;
+	-webkit-transform:rotate3d(0,1,0,180deg);
+	-moz-transform:rotateY(180deg);
+	-o-transform:rotateY(180deg);
+	transform:rotate3d(0,1,0,180deg);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.face.back div{
+	color: white;
+	// text-align: center;
+	background: white;
+}
+
+.front {
+	z-index: 1;
+}
+
+.xShowProfile.face.back {
+	height:200%;
+	width: 203%;
+	right:0px;
+}
+
+.xShowAddress.face.back {
+	.xShowProfile.face.back;
+	left:0px;
+}
+.xShowInfo.face.back {
+	.xShowAddress.face.back;
+	height:100%;
+	top: 0px;
+	left:0px;
+	div form{
+		input{
+			margin-top:2px;
+			margin-bottom:2px;
+		}
+
+		input:nth-of-type(-n+8){
+			width:50%;
+			float:left;
+		}	
+
+
+	}	
+}
+
+.front a.xPlusIcon{
+	.xIcons;
+}
+.xFlipcardContainer .flipcard:hover .front a.xPlusIcon{
+	.xIconsOnHover;
+}
+
+.front a.xMinusIcon{
+	.xIcons;
+	right: 90px;
+}
+.xShowCardRight .front a.xMinusIcon{
+	.xIcons;
+	right: 30px;
+}
+
+.xFlipcardContainer .flipcard:hover a.xMinusIcon{
+	.xIconsOnHover;
+}
+.xFlipcardContainer .flipcard:hover a.xCameraIcon{
+	.xIconsOnHover;
+}
+
+.xFlipcardContainer .flipcard:hover a.xRecordIcon{
+	.xIconsOnHover;
+}
+
+text{
+	margin-left: 5px;
+}
+
+.xShowProfile div.genderSelect{
+	overflow: visible;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 40%;
+
+}
+
+.btn.dropdown-toggle.clearfix{
+	width:100%;
+}
+
+
+
+.xShowProfile .xShowLeft div.playRecordButton{
+	display: none;
+	position:absolute;
+	opacity:0.5; 
+	width:38%;
+	height:67%;
+	/*// border:1px solid #000; */
+	bottom:17%; 
+	left:8%;
+}
+
+.playRecordTriangle{
+
+	text-align: center;
+	display: block;
+
+	margin-top: 15%;
+}
+
+.xShowProfilePicture:hover .xShowProfile .xShowLeft div.playRecordButton{
+	display: block;
+}
+
+.overlay{
+	display: none;
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1041;
+    div{
+		text-align: center;
+		display: block;
+		margin-top: 20%;
+    }
+}
+
+.recordCounter{
+	display: inline-block;
+}
+
+
+.fa-caret-right{
+	padding-left:10px;
+}
+
+.moreInfo form{
+	input{
+		width: 25%;
+		float: left;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.xShowMoreInfo{
+	.xIcons;
+	right:60px;
+}
+
+.xFlipcardContainer .flipcard:hover a.xShowMoreInfo{
+	.xIconsOnHover;
+}
+
+.showMoreInfo ul{
+	float:left;
+	margin:10px;
+
+}
+
+
+.modal-content{
+	height: 100%;
+}
+
+.xUploadPicture{
+	display: none;
+	position: absolute;
+	bottom: 20%;
+	left: 17%;
+
+}
+
+
+.xShowProfilePicture:hover .xUploadPicture{
+	display: block;
+}
+
+
+.xQrcodeImg {
+	width: 35%;
+	vertical-align: text-top;
+}
+
+a.xOtherCard.xMinusIcon{
+	right:10px;
+}
+
+.xOtherCardHead{
+	margin-left: 10%;
+	margin-bottom: 3%;
+}
+
+.changeGroupSelect{
+	width: 50%;
+}
+
+
+.bSkype{
+	margin-left: 10px;
+	color: grey !important;
+}
+
+.bSkype:hover {
+	color: #12A5F4 !important;
+}
+
+#bAddressContent{
+	display: none;
+	margin: auto;
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 9999;
+}
+
+.bAddressHead{
+	background: rgba(255,255,255,0.8);
+	height: 60px;
+	top: 10%;
+	position: fixed;
+	width: 50%;
+	left: 25%;
+	border-radius: 10px 10px 0 0;
+}
+
+.bAddressTitle{
+	display: inline-block;
+	height: 50px;
+	position: fixed;
+	left: 26%;
+	top: 10%;
+}
+
+.bAddressClose{
+	float:right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#bAddressMap{
+	width: 50%;
+	height: 400px;
+	margin: auto;
+	position: fixed !important;
+	top: 16%;
+	left: 25%;
+	background-color: rgb(229, 227, 223);
+	overflow: hidden;
+	-webkit-transform: translateZ(0);
+}
+
+
+.xShowSSN1,.xShowSSN2{
+	font-size: 0.8em;
+}
+
+.xShowSSN div.xShowSSN1{
+	padding-top: 10%;
+}
+
+.xShowSSN div.xShowSSN2{
+	padding-top: 0;
+}
+
+.xLine{
+	margin-left: 0;
+	width: 88%;
+}
+

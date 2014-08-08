@@ -1,0 +1,139 @@
+@import url('bootstrap.css');
+@import url('font-awesome.css');
+@import url('flat-ui.css');
+@import "variables.less";
+@import "mixins.less";
+
+@wFontColor: black;
+@wListFontSizeTitle: 20px;
+@wListFontSizeContent: 18px;
+@wBackgroundColor : transparent;
+@wLeftBackgroundColor : transparent;
+@wCenterBackgroundColor :transparent;
+@wContainerMarginTop: 0px;
+@wContainerMarginBottom: 20px;
+@wBorderWidth: 2px;
+@wBorderColor: rgb(204,204,204);
+@wFlatUIGreen: rgb(26,188,156);
+@wFlatUIHoverGrey: rgb(238,238,238);
+@tempHeight : 800px;
+
+
+body{
+	color: @wFontColor;
+}
+a{
+	color: @wFontColor;
+}
+.rounded-corners (@radius: 3px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+.wBorderWidthAndColor{
+	border-width: @wBorderWidth;
+	border-color: @wBorderColor;
+}
+
+.wNotificationContainer{
+	margin-top: @wContainerMarginTop;
+	margin-bottom: @wContainerMarginBottom;
+}
+
+.wNotificationLeftContainer{
+  	.make-lg-column(2);
+  	.make-lg-column-offset(1);
+  	.wNotificationContainer;
+
+	background-color: @wLeftBackgroundColor;
+	height: 100%;
+	//height: @tempHeight;
+  	padding-right: 0px;
+  	//border-right-style: solid;
+  	//.wBorderWidthAndColor;
+}
+
+
+.wNotificationCenterContainer{
+  	.make-lg-column(8);
+  	.wNotificationContainer;
+	background-color: @wCenterBackgroundColor;
+	height: 100%;
+	//height: @tempHeight;
+    border-left-style: solid;
+    border-width: 2px;
+    border-color: #cccccc;
+    .wBorderWidthAndColor;
+}
+
+.wNotificationSectionContainer{
+	background-color: transparent;
+	// border-top-style: solid;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	.wBorderWidthAndColor;
+}
+
+.wNotificationList>li{
+	list-style-type: none;
+	padding-left: 40px;
+	font-size: @wListFontSizeContent;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom-style: solid;
+	.wBorderWidthAndColor;
+}
+.wNotificationList>li:first-child{
+	padding-left: 0px;
+	font-size: @wListFontSizeTitle;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-color: black;
+}
+.wNotificationList>li:last-child{
+	border-bottom-style: none;
+}
+.wNotificationList>li>button{
+    float:right;
+    height:22px;
+    padding-top:0px;
+}
+.wNotificationList>li>button p{
+    float:right;
+}
+
+// .wNotificationSectionContainer ul{
+// 	margin-top: 10px;
+// 	margin-bottom: 10px;
+// }
+
+// .wNotificationSectionContainer ul>li{
+// 	.wBorderWidthAndColor;
+// }
+
+#wCenterTitle{
+	font-size: @wListFontSizeTitle+2px;
+	border-bottom-style: solid;
+	border-bottom-width: 4px;
+	border-color: black;
+}
+
+.nav-list > li > a{
+	font-size: @wListFontSizeTitle;
+}
+li i{
+	margin-right: 10px;
+}
+
+.wNotificationName{
+	display: inline;
+	padding: 3px;
+	font-size: @wListFontSizeContent;
+	font-weight: bold;
+}
+.wNotificationName:hover{
+	display: inline;
+	color:@wFlatUIGreen;
+	background-color:@wFlatUIHoverGrey;
+	.rounded-corners
+}

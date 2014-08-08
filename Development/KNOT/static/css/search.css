@@ -1,0 +1,82 @@
+.bForm{
+    border:2px solid #AAADAF;
+    /*box-shadow: 0 1px 1px rgba(0,0,0,0.5), inset 1px 0 1px rgba(0,0,0,0.5);*/
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bForm p{
+    border-bottom: 1px solid #AAADAF;
+    border-radius: 4px;
+    margin: 0 -20px;
+    padding: 0 20px;
+
+}
+
+.bForm section{
+    padding: 5px 0 20px 0;
+}
+
+.bMainBlock{
+    width: 100%;
+    height: 240px;
+    margin: 10px 0;
+    background: rgba(0,0,0,0.1);
+}
+
+/*overwrite myCard.css*/
+.xShowCard{
+    width:120%;
+    height: 200px;
+}
+
+.xShowProfile .xShowRight a{
+    font-size: 0.9em
+}
+
+.xShowProfile .xShowRight p{
+    font-size: 0.9em
+}
+
+i.fa.fa-4x{
+    font-size: 2em;
+}
+
+.xShowInfo a{
+    font-size: 0.9em;
+}
+
+#submit{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left:120px;
+    top:20px;
+}
+
+.btn.dropdown-toggle.clearfix{
+    width:200px;
+}
+
+.sideBarSearch{
+    margin-top:20px;
+}
+
+
+.bGmailIcon {
+    float: right;
+    color: #d34836;
+}
+
+.bGmailIcon:hover{
+    color: #d34836;
+
+}
+.xSearchPage{
+    padding: 10px 10px 80px 50px;
+}
+
+.addButton{
+    width:50px;
+}
